@@ -7,7 +7,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.1.0'
+    classpath 'com.android.tools.build:gradle:3.1.2'
     classpath 'io.fabric.tools:gradle:1.25.1'
   }
 }
@@ -16,9 +16,9 @@ apply plugin: 'com.android.library'
 
 def DEFAULT_COMPILE_SDK_VERSION = 27
 def DEFAULT_BUILD_TOOLS_VERSION = "27.0.3"
-def DEFAULT_TARGET_SDK_VERSION = 26
+def DEFAULT_TARGET_SDK_VERSION = 22
 def DEFAULT_FIREBASE_VERSION = "12.0.0"
-def DEFAULT_SUPPORT_LIB_VERSION = "27.0.2"
+def DEFAULT_SUPPORT_LIB_VERSION = "27.0.3"
 
 android {
   compileSdkVersion rootProject.hasProperty('compileSdkVersion') ? rootProject.compileSdkVersion : DEFAULT_COMPILE_SDK_VERSION
@@ -88,7 +88,7 @@ def supportVersion = rootProject.hasProperty('supportLibVersion') ? rootProject.
 dependencies {
   // compile fileTree(include: ['*.jar'], dir: 'libs')
   api "com.facebook.react:react-native:+"  // From node_modules
-  api "com.android.support:support-v4:$supportVersion"
+  api "com.android.support:support-v7:$supportVersion"
   compileOnly 'me.leolin:ShortcutBadger:1.1.21@aar'
   compileOnly "com.google.android.gms:play-services-base:$firebaseVersion"
   compileOnly "com.google.firebase:firebase-core:$firebaseVersion"
